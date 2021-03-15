@@ -1349,6 +1349,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205510081}
   m_CullTransparentMesh: 0
+--- !u!1 &207035559 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1776049863988622404, guid: 5e246bf95da14744bb76d73e8792b1c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 808200374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &209355557
 GameObject:
   m_ObjectHideFlags: 0
@@ -3558,6 +3564,12 @@ MonoBehaviour:
   dailyCases: 0
   dailyDeaths: 0
   bubble: {fileID: 0}
+--- !u!1 &586238971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1776049862375658458, guid: 5e246bf95da14744bb76d73e8792b1c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 808200374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &598980575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4490,11 +4502,12 @@ MonoBehaviour:
   currentDay: 
   allEvents:
     events: []
-  eventTitle: {fileID: 0}
-  eventDetail: {fileID: 0}
-  choice1: {fileID: 0}
-  choice2: {fileID: 0}
-  choice3: {fileID: 0}
+  eventBox: {fileID: 1252428691}
+  eventTitle: {fileID: 1574795125}
+  eventDetail: {fileID: 586238971}
+  choice1: {fileID: 913440843}
+  choice2: {fileID: 1541707133}
+  choice3: {fileID: 207035559}
 --- !u!1 &748777483
 GameObject:
   m_ObjectHideFlags: 0
@@ -5071,7 +5084,12 @@ PrefabInstance:
     - target: {fileID: 1776049863821453924, guid: 5e246bf95da14744bb76d73e8792b1c7,
         type: 3}
       propertyPath: m_Name
-      value: Event
+      value: EventBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776049863821453924, guid: 5e246bf95da14744bb76d73e8792b1c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e246bf95da14744bb76d73e8792b1c7, type: 3}
@@ -5995,6 +6013,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898931196}
   m_CullTransparentMesh: 0
+--- !u!1 &913440843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1776049862642841802, guid: 5e246bf95da14744bb76d73e8792b1c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 808200374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &922163759
 GameObject:
   m_ObjectHideFlags: 0
@@ -7732,6 +7756,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243530194}
   m_CullTransparentMesh: 0
+--- !u!1 &1252428691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1776049863821453924, guid: 5e246bf95da14744bb76d73e8792b1c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 808200374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1333681338
 GameObject:
   m_ObjectHideFlags: 0
@@ -9587,6 +9617,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541641095}
   m_CullTransparentMesh: 0
+--- !u!1 &1541707133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1776049863233726402, guid: 5e246bf95da14744bb76d73e8792b1c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 808200374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1574780700
 GameObject:
   m_ObjectHideFlags: 0
@@ -9724,6 +9760,12 @@ MonoBehaviour:
   dailyCases: 0
   dailyDeaths: 0
   bubble: {fileID: 0}
+--- !u!1 &1574795125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1776049862699842126, guid: 5e246bf95da14744bb76d73e8792b1c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 808200374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1582255540
 GameObject:
   m_ObjectHideFlags: 0
@@ -11179,7 +11221,7 @@ RectTransform:
   m_Children:
   - {fileID: 1930657129}
   m_Father: {fileID: 2012843063}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13133,8 +13175,8 @@ RectTransform:
   - {fileID: 804643775}
   - {fileID: 843578816}
   - {fileID: 20628106}
-  - {fileID: 808200375}
   - {fileID: 1758155103}
+  - {fileID: 808200375}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14028,6 +14070,7 @@ MonoBehaviour:
   stopped: 0
   clock: {fileID: 797418746}
   states: {fileID: 712732456}
+  stopButton: {fileID: 0}
 --- !u!1 &2092695610
 GameObject:
   m_ObjectHideFlags: 0

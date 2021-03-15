@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 
-
+    public static GameController instance = null;
     public static float timeForOneDay = 2.0f;
     public float timer = timeForOneDay;
     public string currentDate = "2020-01-21";
@@ -15,6 +15,19 @@ public class GameController : MonoBehaviour
     public GameObject clock;
     public GameObject states;
     public GameObject stopButton;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void UpdateAllStates() {
         foreach (Transform child in states.transform) {
@@ -32,8 +45,11 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventController.instance.BindEventUI();
+        EventController.instance.allEvents = LoadJson.LoadJsonFromFile<Events>();
         GetComponent<DataLoader>().LoadDataBeforeRendering();
-        GameObject.Find("Event").SetActive(false);
+        // GameObject.Find("Event").SetActive(false);
+        EventController.instance.eventBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,6 +63,7 @@ public class GameController : MonoBehaviour
                 currentDate = NextDay(currentDate);
                 UpdateAllStates();
                 timer = timeForOneDay;
+                EventController.instance.CheckEvents();
             }
         }
     }
