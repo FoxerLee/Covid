@@ -2,25 +2,34 @@
     "events":
     [
         {
-            "time": "2021-01-03",
+            "time": "2020-01-23",
             "title": "lore12321313m ipsum",
             "text": "1111Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "choice1": "choice221",
             "target1": "money",
             "influence1": 0.2,
             "choice2": "cho11ice2",
-            "choice3": ""
+            "target2": "money",
+            "influence2": 0.3,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
         }
         ,
         {
-            "time": "2021-01-04",
+            "time": "2020-01-25",
             "title": "lorem ipsum2",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "choice1": "choice1",
             "target1": "money2",
             "influence1": 0.3,
             "choice2": "choice2",
-            "choice3": "choice3"
+            "target2": "inf",
+            "influence2": 0.2,
+            "choice3": "choice3",
+            "target3": "fe",
+            "influence3": 0.223
+
         }
     ]
 

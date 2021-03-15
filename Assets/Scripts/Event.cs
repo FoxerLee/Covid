@@ -13,5 +13,10 @@ public class Event
     public double influence1;
     
     public string choice2;
+    public string target2;
+    public double influence2;
+
     public string choice3;
+    public string target3;
+    public double influence3;
 }
