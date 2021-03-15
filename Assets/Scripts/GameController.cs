@@ -58,13 +58,13 @@ public class GameController : MonoBehaviour
         
         if (!stopped) {
             timer -= Time.deltaTime;
-            clock.GetComponent<Text>().text = currentDate;
             if (timer <= 0) {
                 currentDate = NextDay(currentDate);
                 UpdateAllStates();
                 timer = timeForOneDay;
                 EventController.instance.CheckEvents();
             }
+            clock.GetComponent<Text>().text = currentDate;
         }
     }
 
