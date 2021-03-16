@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public static GameController instance = null;
     public static float timeForOneDay = 1.0f;
     public float timer = timeForOneDay;
-    public string currentDate = "2020-01-21";
+    public string currentDate = "2020-01-19";
     public bool stopped = false;
     public GameObject clock;
     public GameObject states;
@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     public float moneyPer = 1f;
 
     private int countryCases = 0;
-    private int endCases = 100;
+    private int endCases = 150000;
     
     private int countryDeaths = 0;
     
@@ -54,13 +54,16 @@ public class GameController : MonoBehaviour
     // TODO: Add logic about character choices
     public void Reset() {
         stopped = false;
-        currentDate = "2020-01-21";
+        currentDate = "2020-01-19";
         stopped = false;
         countryCases = 0;
         // endCases = 1000;
         currentMoney = 0f;
         endMoney = 1000f;
         dailyMoney = 2f;
+
+        casePer = 1f;
+        moneyPer = 1f;
 
         ResetAllState();
 
@@ -82,7 +85,7 @@ public class GameController : MonoBehaviour
         EventController.instance.eventBox.SetActive(false);
         GameObject.Find("Canvas/Ending").GetComponent<EndingBehavior>().HideEndingPage();
 
-        GameOver("ending1");
+        // GameOver("ending1");
 
     }
 
@@ -104,10 +107,17 @@ public class GameController : MonoBehaviour
                 currentMoney += dailyMoney * moneyPer;
                 UpdateMoneyBar();
 
+                PolicyController.instance.UpdatePolicyBar();
+
                 // case ending
                 if (countryCases >= endCases)
                 {
                     GameOver("ending1");
+                }
+                // money ending
+                if (currentMoney <= 0.0f)
+                {
+                    GameOver("ending2");
                 }
 
             }
@@ -185,7 +195,31 @@ public class GameController : MonoBehaviour
         if (ending == "ending1")
         {
             endingPage.GetComponent<EndingBehavior>().TriggerEnding(
-                "Bad ending 01.",
+                "There are too many patients, All hospitals are full, people are rushing to stock up drugs and goods... Everything is out of control...",
+                PolicyController.instance.vac / 10f * 500f,
+                PolicyController.instance.pro / 10f * 500f,
+                PolicyController.instance.coo / 10f * 500f,
+                countryCases,
+                countryDeaths,
+                (int)currentMoney
+            );
+        }
+        else if (ending == "ending2")
+        {
+            endingPage.GetComponent<EndingBehavior>().TriggerEnding(
+                "Although you have contained the epidemic, your treasury has dried up. The stock market crashed and prices soared. Is it all worth it?",
+                PolicyController.instance.vac / 10f * 500f,
+                PolicyController.instance.pro / 10f * 500f,
+                PolicyController.instance.coo / 10f * 500f,
+                countryCases,
+                countryDeaths,
+                (int)currentMoney
+            );
+        }
+        else if (ending == "ending3")
+        {
+            endingPage.GetComponent<EndingBehavior>().TriggerEnding(
+                "You successfully made it through April, but this is just the beginning. More incidents are waiting for you to solve, and more problems need to be dealt with by you. \n\n To be continued...",
                 PolicyController.instance.vac / 10f * 500f,
                 PolicyController.instance.pro / 10f * 500f,
                 PolicyController.instance.coo / 10f * 500f,

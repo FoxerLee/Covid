@@ -72,7 +72,7 @@ public class PolicyController : MonoBehaviour
         UpdatePolicyBar();
     }
 
-    private void UpdatePolicyBar()
+    public void UpdatePolicyBar()
     {
         RectTransform vacBarRectTransform = vacBar.GetComponent<RectTransform>();
         float preVac = vac / 10.0f * 214.0f;
