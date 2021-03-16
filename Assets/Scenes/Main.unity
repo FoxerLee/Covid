@@ -7064,8 +7064,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 840233323}
-        m_MethodName: Restart
+      - m_Target: {fileID: 2087372308}
+        m_MethodName: Reset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19121,7 +19121,7 @@ MonoBehaviour:
   stopButton: {fileID: 1758155102}
   endingPage: {fileID: 840233319}
   policyController: {fileID: 947586138}
-  currentMoney: 0
+  currentMoney: 2
   casePer: 1
   moneyPer: 1
 --- !u!114 &2087372309
