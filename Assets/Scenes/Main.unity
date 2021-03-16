@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 20628107}
   - component: {fileID: 20628109}
   m_Layer: 5
-  m_Name: ' SeniorConsultant'
+  m_Name: SeniorConsultant
   m_TagString: Advisor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3558,7 +3558,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 305.4, y: -148.2}
-  m_SizeDelta: {x: 214.94644, y: 21}
+  m_SizeDelta: {x: 214, y: 21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &522319822
 MonoBehaviour:
@@ -3790,8 +3790,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -28, y: -3}
-  m_SizeDelta: {x: 75.748505, y: 81.25748}
+  m_AnchoredPosition: {x: -28, y: -4.314369}
+  m_SizeDelta: {x: 75.748505, y: 78.62874}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529565700
 MonoBehaviour:
@@ -4131,7 +4131,7 @@ GameObject:
   - component: {fileID: 569944951}
   - component: {fileID: 569944950}
   m_Layer: 5
-  m_Name: Cases
+  m_Name: Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4156,8 +4156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -333, y: 296.4}
-  m_SizeDelta: {x: 288, y: 31.032196}
+  m_AnchoredPosition: {x: -1.7, y: -82.3}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569944950
 MonoBehaviour:
@@ -4275,7 +4275,7 @@ GameObject:
   - component: {fileID: 570280450}
   - component: {fileID: 570280449}
   m_Layer: 5
-  m_Name: Dissatisfaction
+  m_Name: Cases
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6249,7 +6249,7 @@ GameObject:
   - component: {fileID: 830782411}
   - component: {fileID: 830782410}
   m_Layer: 5
-  m_Name: Bar
+  m_Name: ProBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6934,7 +6934,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 880125669}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 947586139}
+        m_MethodName: UpdatePolicy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: pro
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &880125669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7140,7 +7151,7 @@ GameObject:
   - component: {fileID: 898931199}
   - component: {fileID: 898931198}
   m_Layer: 5
-  m_Name: Bar
+  m_Name: VacBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7440,6 +7451,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925365753}
   m_CullTransparentMesh: 0
+--- !u!1 &947586138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947586140}
+  - component: {fileID: 947586139}
+  m_Layer: 0
+  m_Name: PolicyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &947586139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947586138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c5bcd09d3ef4c86bb73f2e8c37f0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vac: 0
+  pro: 0
+  coo: 0
+--- !u!4 &947586140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947586138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 764.26483, y: 679.3391, z: -372.69955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &980499089
 GameObject:
   m_ObjectHideFlags: 0
@@ -8921,7 +8978,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1218356632}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 947586139}
+        m_MethodName: UpdatePolicy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: vac
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1218356632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9473,7 +9541,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 305.4, y: -290.2}
-  m_SizeDelta: {x: 214.94644, y: 21}
+  m_SizeDelta: {x: 214, y: 21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243530196
 MonoBehaviour:
@@ -10702,8 +10770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.9000015, y: 0.9000015}
-  m_SizeDelta: {x: 75.748505, y: 81.25748}
+  m_AnchoredPosition: {x: -6.9000015, y: -2.3643665}
+  m_SizeDelta: {x: 75.748505, y: 74.72873}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1480693389
 GameObject:
@@ -12285,7 +12353,7 @@ GameObject:
   - component: {fileID: 1594866075}
   - component: {fileID: 1594866074}
   m_Layer: 5
-  m_Name: Bar
+  m_Name: CooBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15365,7 +15433,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 305.4, y: -219.2}
-  m_SizeDelta: {x: 214.94644, y: 21}
+  m_SizeDelta: {x: 214, y: 21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871322811
 MonoBehaviour:
@@ -17023,7 +17091,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2047545061}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 947586139}
+        m_MethodName: UpdatePolicy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: coo
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2047545061
 MonoBehaviour:
   m_ObjectHideFlags: 0
