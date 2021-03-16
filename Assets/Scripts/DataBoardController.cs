@@ -33,13 +33,13 @@ public class DataBoardController : MonoBehaviour
 
 
     private AdvisorChar[] caArr = { 
-        new AdvisorChar("Dr. Fauci", "          81\n\n       	  Immunology\n\n             Very High\n", " + 10% Vaccine Dev", "\n\n - 5% Propoganda"), 
-        new AdvisorChar("Dr. Scott Atlas", "          66\n\n       	  Radiology\n\n             High\n", " + 10% Propoganda\n\n + 10% Economy", "\n\n\n\n - 5% Vaccine Dev")
+        new AdvisorChar("Dr. White", "          81\n\n       	  Immunology\n\n             Very High\n", " + 10% Vaccine Dev", "\n\n - 5% Propoganda"), 
+        new AdvisorChar("Dr. Black", "          66\n\n       	  Pneumology\n\n             High\n", " + 10% Propoganda\n\n + 10% Economy", "\n\n\n\n - 5% Vaccine Dev")
     };
 
     private AdvisorChar[] hmArr = {
-        new AdvisorChar("Alex Azar", "             54\n\n             High", " + 20% Propoganda\n\n + 20% Economy", "\n\n\n\n - 15% Cooperation"), 
-        new AdvisorChar("Norris Cochran", "             51\n\n             High", " + 15% Vaccine Dev\n\n + 10% Economy", "\n\n\n\n - 5% Satisfaction")
+        new AdvisorChar("Mr. Roy", "             54\n\n             High", " + 20% Propoganda\n\n + 20% Economy", "\n\n\n\n - 15% Cooperation"), 
+        new AdvisorChar("Mr. Buzz", "             51\n\n             High", " + 15% Vaccine Dev\n\n + 10% Economy", "\n\n\n\n - 5% Satisfaction")
     };
 
 

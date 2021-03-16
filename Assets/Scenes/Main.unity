@@ -258,7 +258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28ca53fdbddcb7c42807f994c384ddd5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b72568ef973d6ea4a8b51d687c030585, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4207,9 +4207,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Dr. Fauci
+    - m_Text: Dr. White
       m_Image: {fileID: 0}
-    - m_Text: Dr. Scott Atlas
+    - m_Text: Dr. Black
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4629,7 +4629,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Doctor Fucci
+  m_Text: Dr. White
 --- !u!222 &600355377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6074,7 +6074,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5705bd57e05eac74da92ca5d3140dc14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fbfaff11679d2154aa62885cee62c327, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6644,7 +6644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b0709aedf64fb024d8a3c3cc1e980293, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35de90129b8f3fe4e9c6ce2947dd4e21, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8222,9 +8222,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Alex Azar
+    - m_Text: Mr. Roy
       m_Image: {fileID: 0}
-    - m_Text: Norris Cochran
+    - m_Text: Mr. Buzz
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9833,7 +9833,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "             54\n\n             High\n \n \n "
+  m_Text: "             58\n\n             High\n \n \n "
 --- !u!222 &1341426998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14255,7 +14255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alex Azar
+  m_Text: Mr. Roy
 --- !u!222 &1775634465
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15664,7 +15664,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alex Azar
+  m_Text: Mr. Roy
 --- !u!222 &1900639311
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16050,7 +16050,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dr. Fauci
+  m_Text: Dr. White
 --- !u!222 &1986515108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17390,11 +17390,11 @@ MonoBehaviour:
   hmIdx: 0
   caIdx: 0
   caImgArr:
-  - {fileID: 21300000, guid: 28ca53fdbddcb7c42807f994c384ddd5, type: 3}
-  - {fileID: 21300000, guid: d7131a11dd81abd4eb8f83f2a1daae76, type: 3}
+  - {fileID: 21300000, guid: b72568ef973d6ea4a8b51d687c030585, type: 3}
+  - {fileID: 21300000, guid: 323a7ebf3a82bfe4d87ee6045c4ec1b7, type: 3}
   hmImgArr:
-  - {fileID: 21300000, guid: b0709aedf64fb024d8a3c3cc1e980293, type: 3}
-  - {fileID: 21300000, guid: 49f76ced85ced6c41823e3cb925409f5, type: 3}
+  - {fileID: 21300000, guid: 35de90129b8f3fe4e9c6ce2947dd4e21, type: 3}
+  - {fileID: 21300000, guid: 5b0780ca3e3d7bf408dd6be16db52a5b, type: 3}
   healthMinister: {fileID: 843578815}
   covidAdvisor: {fileID: 20628105}
 --- !u!1 &2092695610
