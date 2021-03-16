@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     private float currentMoney = 0f;
     private float endMoney = 1000f;
     private float dailyMoney = 2f;
-
+    
     void Awake()
     {
         if (instance == null)
@@ -70,7 +70,6 @@ public class GameController : MonoBehaviour
         
         if (!stopped) {
             timer -= Time.deltaTime;
-            clock.GetComponent<Text>().text = currentDate;
             if (timer <= 0) {
                 currentDate = NextDay(currentDate);
                 UpdateAllStates();
@@ -82,7 +81,11 @@ public class GameController : MonoBehaviour
                 // economy related
                 currentMoney += dailyMoney;
                 UpdateMoneyBar();
+
+//                 EventController.instance.CheckEvents();
+
             }
+            clock.GetComponent<Text>().text = currentDate;
         }
     }
 
