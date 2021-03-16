@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public GameObject clock;
     public GameObject states;
     public GameObject stopButton;
+    public GameObject endingPage;
+    public GameObject policyController;
 
     private int countryCases = 0;
     private int endCases = 1000;
@@ -36,23 +38,32 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void UpdateAllStates() {
-        // countryCases = 0;
-        foreach (Transform child in states.transform) {
-
-            child.gameObject.GetComponent<StatesCases>().CheckDaily(currentDate);
-            countryCases += child.gameObject.GetComponent<StatesCases>().dailyCases;
-        }
-
-        // update case bar
-        UpdateCaseBar();
-    }
-
     public void ToggleStopped() {
         stopped = !stopped;
         Text stopButtonText = stopButton.GetComponentInChildren<Text>();
         stopButtonText.text = (stopButtonText.text == "Stop") ? "Resume": "Stop";
     }
+
+    // TODO: Add logic about character choices
+    public void Reset() {
+        stopped = false;
+        currentDate = "2020-01-21";
+        stopped = false;
+        countryCases = 0;
+        endCases = 1000;
+        currentMoney = 0f;
+        endMoney = 1000f;
+        dailyMoney = 2f;
+
+        ResetAllState();
+
+        UpdateMoneyBar();
+
+        policyController.GetComponent<PolicyController>().Reset();
+
+        endingPage.GetComponent<EndingBehavior>().HideEndingPage();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +73,7 @@ public class GameController : MonoBehaviour
         GetComponent<DataLoader>().LoadDataBeforeRendering();
         // GameObject.Find("Event").SetActive(false);
         EventController.instance.eventBox.SetActive(false);
+        GameObject.Find("Canvas/Ending").GetComponent<EndingBehavior>().HideEndingPage();
     }
 
     // Update is called once per frame
@@ -86,6 +98,10 @@ public class GameController : MonoBehaviour
 
             }
             clock.GetComponent<Text>().text = currentDate;
+        }
+
+        if (currentDate == "2020-01-24") {
+            GameOver();
         }
     }
 
@@ -142,5 +158,40 @@ public class GameController : MonoBehaviour
         RectTransform theBarRectTransform = theBar.GetComponent<RectTransform>();
         float percentMoney = currentMoney / endMoney * 288.0f;
         theBarRectTransform.sizeDelta = new Vector2(percentMoney, 31f);
+    }
+
+
+    private void GameOver() {
+        stopped = true;
+        endingPage.GetComponent<EndingBehavior>().TriggerEnding(
+            "Bad ending 01.",
+            50.0f,
+            20.0f,
+            10.0f,
+            100000,
+            0,
+            100
+        );
+    }
+
+    private void UpdateAllStates() {
+        // countryCases = 0;
+        foreach (Transform child in states.transform) {
+
+            child.gameObject.GetComponent<StatesCases>().CheckDaily(currentDate);
+            countryCases += child.gameObject.GetComponent<StatesCases>().dailyCases;
+        }
+
+        // update case bar
+        UpdateCaseBar();
+    }
+
+    private void ResetAllState() {
+        foreach (Transform child in states.transform) {
+            child.gameObject.GetComponent<StatesCases>().Reset();
+        }
+
+        // update case bar
+        UpdateCaseBar();
     }
 }

@@ -60,4 +60,12 @@ public class PolicyController : MonoBehaviour
         cooBar = GameObject.Find("Cooperation/CooBar");
 
     }
+
+    public void Reset() {
+        vac = 0f;
+        pro = 0f;
+        coo = 0f;
+
+        UpdatePolicyBar();
+    }
 }

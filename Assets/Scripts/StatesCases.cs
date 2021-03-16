@@ -41,6 +41,14 @@ public class StatesCases : MonoBehaviour
         }
     }
 
+    public void Reset() {
+        totalCases = 0;
+        totalDeath = 0;
+        dailyCases = 0;
+        dailyDeaths = 0;
+        img.color = Color.white;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,12 +58,6 @@ public class StatesCases : MonoBehaviour
         stateName.fontSize = 50;
         loader = GameObject.Find("GameController").GetComponent<DataLoader>();
         bubble = (GameObject)Resources.Load("Prefabs/Bubble", typeof(GameObject));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void UpdateStateColor() {
