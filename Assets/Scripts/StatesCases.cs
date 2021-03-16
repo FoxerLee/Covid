@@ -18,6 +18,7 @@ public class StatesCases : MonoBehaviour
     private Image img; 
     private Text stateName;
     private DataLoader loader;
+
     
     public void AddDaily(int cases, int death) {
         // update data
