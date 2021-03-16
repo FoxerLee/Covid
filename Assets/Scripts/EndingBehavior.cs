@@ -33,10 +33,6 @@ public class EndingBehavior : MonoBehaviour
         ShowEndingPage();
     }
 
-    public void Restart() {
-        HideEndingPage();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
-    }
 
     public void HideEndingPage() {
         gameObject.SetActive(false);

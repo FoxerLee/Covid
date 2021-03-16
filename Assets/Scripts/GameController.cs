@@ -124,6 +124,10 @@ public class GameController : MonoBehaviour
             clock.GetComponent<Text>().text = currentDate;
         }
 
+        // if (currentDate == "2020-01-25") {
+        //     GameOver("ending1");
+        // }
+
 
     }
 
