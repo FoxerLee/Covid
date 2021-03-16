@@ -110,7 +110,17 @@ public class EventController : MonoBehaviour
 
     private void eventCallBack(GameObject choice, string target, double influence, string a)
     {
-        Debug.Log(target + " " + influence);
+        
+        // Debug.Log(target + " " + influence);
+        if (target == "case")
+        {
+            GameController.instance.casePer += (float)influence;
+        }
+        else if (target == "money")
+        {
+            GameController.instance.moneyPer += (float)influence;
+        }
+
         if (a == "action1")
         {
             choice.GetComponent<Button>().onClick.RemoveListener(action1);

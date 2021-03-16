@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 {
 
     public static GameController instance = null;
-    public static float timeForOneDay = 2.0f;
+    public static float timeForOneDay = 1.0f;
     public float timer = timeForOneDay;
     public string currentDate = "2020-01-21";
     public bool stopped = false;
@@ -18,12 +18,19 @@ public class GameController : MonoBehaviour
     public GameObject endingPage;
     public GameObject policyController;
 
-    private int countryCases = 0;
-    private int endCases = 1000;
+    public float currentMoney = 100f;
 
-    private float currentMoney = 0f;
+    public float casePer = 1f;
+    public float moneyPer = 1f;
+
+    private int countryCases = 0;
+    private int endCases = 100;
+    
+    private int countryDeaths = 0;
+    
     private float endMoney = 1000f;
     private float dailyMoney = 2f;
+    
     
     void Awake()
     {
@@ -50,7 +57,7 @@ public class GameController : MonoBehaviour
         currentDate = "2020-01-21";
         stopped = false;
         countryCases = 0;
-        endCases = 1000;
+        // endCases = 1000;
         currentMoney = 0f;
         endMoney = 1000f;
         dailyMoney = 2f;
@@ -74,6 +81,9 @@ public class GameController : MonoBehaviour
         // GameObject.Find("Event").SetActive(false);
         EventController.instance.eventBox.SetActive(false);
         GameObject.Find("Canvas/Ending").GetComponent<EndingBehavior>().HideEndingPage();
+
+        GameOver("ending1");
+
     }
 
     // Update is called once per frame
@@ -91,18 +101,20 @@ public class GameController : MonoBehaviour
                 EventController.instance.CheckEvents();
                 
                 // economy related
-                currentMoney += dailyMoney;
+                currentMoney += dailyMoney * moneyPer;
                 UpdateMoneyBar();
 
-//                 EventController.instance.CheckEvents();
+                // case ending
+                if (countryCases >= endCases)
+                {
+                    GameOver("ending1");
+                }
 
             }
             clock.GetComponent<Text>().text = currentDate;
         }
 
-        if (currentDate == "2020-01-24") {
-            GameOver();
-        }
+
     }
 
     
@@ -149,6 +161,10 @@ public class GameController : MonoBehaviour
         RectTransform theBarRectTransform = theBar.GetComponent<RectTransform>();
         float percentCase = (float)countryCases / (float)endCases * 288.0f;
         theBarRectTransform.sizeDelta = new Vector2(percentCase, 31f);
+
+        GameObject theText = GameObject.Find("Cases/Text");
+        float percent = (float)countryCases / 1000.0f;
+        theText.GetComponent<Text>().text = "Cases: " + percent.ToString("0.000") + "k";
     }
 
 
@@ -158,29 +174,44 @@ public class GameController : MonoBehaviour
         RectTransform theBarRectTransform = theBar.GetComponent<RectTransform>();
         float percentMoney = currentMoney / endMoney * 288.0f;
         theBarRectTransform.sizeDelta = new Vector2(percentMoney, 31f);
+
+        GameObject theText = GameObject.Find("Economy/Text");
+        theText.GetComponent<Text>().text = "Economy: " + currentMoney.ToString();
     }
 
 
-    private void GameOver() {
+    private void GameOver(string ending) {
         stopped = true;
-        endingPage.GetComponent<EndingBehavior>().TriggerEnding(
-            "Bad ending 01.",
-            50.0f,
-            20.0f,
-            10.0f,
-            100000,
-            0,
-            100
-        );
+        if (ending == "ending1")
+        {
+            endingPage.GetComponent<EndingBehavior>().TriggerEnding(
+                "Bad ending 01.",
+                PolicyController.instance.vac / 10f * 500f,
+                PolicyController.instance.pro / 10f * 500f,
+                PolicyController.instance.coo / 10f * 500f,
+                countryCases,
+                countryDeaths,
+                (int)currentMoney
+            );
+        }
+        
     }
 
     private void UpdateAllStates() {
-        // countryCases = 0;
+        float dailyTotalCases = 0;
+        float dailyTotalDeaths = 0;
         foreach (Transform child in states.transform) {
 
             child.gameObject.GetComponent<StatesCases>().CheckDaily(currentDate);
-            countryCases += child.gameObject.GetComponent<StatesCases>().dailyCases;
+            // calculate cases based on influence
+            dailyTotalCases += child.gameObject.GetComponent<StatesCases>().dailyCases;
+            dailyTotalDeaths += child.gameObject.GetComponent<StatesCases>().dailyDeaths;
         }
+
+        dailyTotalCases *= casePer;
+        dailyTotalDeaths *= casePer;
+        countryCases += (int)dailyTotalCases;
+        countryDeaths += (int)dailyTotalDeaths;
 
         // update case bar
         UpdateCaseBar();

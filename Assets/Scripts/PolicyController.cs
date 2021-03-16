@@ -5,9 +5,18 @@ using UnityEngine;
 public class PolicyController : MonoBehaviour
 {
     public static PolicyController instance = null;
+
     public float vac = 0f;
+    public float vacCost = 10f;
+    public float vacPer = 0.1f;
+
     public float pro = 0f;
+    public float proCost = 10f;
+    public float proPer = 0.1f;
+
     public float coo = 0f;
+    public float cooCost = 10f;
+    public float cooPer = 0.1f;
 
     GameObject vacBar;
     GameObject proBar;
@@ -15,23 +24,49 @@ public class PolicyController : MonoBehaviour
 
     void Awake()
     {
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+
         BindPolicyUI();
     }
     
 
     public void UpdatePolicy(string policy)
     {
-        if (policy == "vac" && vac < 10f)
+        if (policy == "vac" && vac < 10f && vacCost < GameController.instance.currentMoney)
         {
             vac += 1f;
+            GameController.instance.currentMoney -= vacCost;
+            vacCost += (1 + vacPer) * vacCost;
+
+            GameController.instance.casePer += -0.01f;
+            GameController.instance.moneyPer += -0.01f;
         }
-        else if (policy == "pro" && pro < 10f)
+        else if (policy == "pro" && pro < 10f && proCost < GameController.instance.currentMoney)
         {
             pro += 1f;
+            GameController.instance.currentMoney -= proCost;
+            proCost += (1 + proPer) * proCost;
+
+            GameController.instance.casePer += -0.01f;
+            GameController.instance.moneyPer += -0.01f;
         }
-        else if (policy == "coo" && coo < 10f)
+        else if (policy == "coo" && coo < 10f && cooCost < GameController.instance.currentMoney)
         {
             coo += 1f;
+            GameController.instance.currentMoney -= cooCost;
+            cooCost += (1 + cooPer) * cooCost;
+
+            GameController.instance.casePer += -0.01f;
+            GameController.instance.moneyPer += -0.01f;
         }
 
         UpdatePolicyBar();
@@ -63,8 +98,16 @@ public class PolicyController : MonoBehaviour
 
     public void Reset() {
         vac = 0f;
+        vacCost = 10f;
+        vacPer = 0.1f;
+
         pro = 0f;
+        proCost = 10f;
+        proPer = 0.1f;
+
         coo = 0f;
+        cooCost = 10f;
+        cooPer = 0.1f;
 
         UpdatePolicyBar();
     }
