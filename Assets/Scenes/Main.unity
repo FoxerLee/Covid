@@ -19114,14 +19114,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 2
-  currentDate: 2020-01-21
+  currentDate: 2020-01-19
   stopped: 0
   clock: {fileID: 797418746}
   states: {fileID: 712732456}
   stopButton: {fileID: 1758155102}
   endingPage: {fileID: 840233319}
   policyController: {fileID: 947586138}
-  currentMoney: 100
+  currentMoney: 2
   casePer: 1
   moneyPer: 1
 --- !u!114 &2087372309

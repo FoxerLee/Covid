@@ -120,6 +120,26 @@ public class EventController : MonoBehaviour
         {
             GameController.instance.moneyPer += (float)influence;
         }
+        else if (target == "casemoney")
+        {
+            GameController.instance.casePer += (float)influence;
+            GameController.instance.moneyPer += (float)influence;
+        }
+        else if (target == "moneycase")
+        {
+            GameController.instance.casePer -= (float)influence;
+            GameController.instance.moneyPer -= (float)influence;
+        }
+        else if (target == "pro")
+        {
+            GameController.instance.moneyPer -= (float)influence;
+            PolicyController.instance.pro += 1f;
+        }
+        else if (target == "vac")
+        {
+            GameController.instance.moneyPer -= (float)influence;
+            PolicyController.instance.vac += 1f;
+        }
 
         if (a == "action1")
         {

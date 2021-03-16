@@ -2,35 +2,230 @@
     "events":
     [
         {
-            "time": "2020-03-23",
-            "title": "lore12321313m ipsum",
-            "text": "1111Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "choice1": "choice221",
-            "target1": "money",
-            "influence1": 0.2,
-            "choice2": "cho11ice2",
-            "target2": "money",
-            "influence2": 0.3,
+            "time": "2020-01-20",
+            "title": "First Case",
+            "text": "The first recorded U.S. case of the new virus was also reported on January 20, in a 35-year-old American citizen traveling from Wuhan, China, to his home in Washington state.",
+            "choice1": "GET READY",
+            "target1": "",
+            "influence1": 0,
+            "choice2": "",
+            "target2": "",
+            "influence2": 0,
             "choice3": "",
             "target3": "",
             "influence3": 0
         }
         ,
         {
-            "time": "2020-03-25",
-            "title": "lorem ipsum2",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            "choice1": "choice1",
-            "target1": "money2",
-            "influence1": 0.3,
-            "choice2": "choice2",
-            "target2": "inf",
-            "influence2": 0.2,
-            "choice3": "choice3",
-            "target3": "fe",
-            "influence3": 0.223
+            "time": "2020-01-22",
+            "title": "First Response",
+            "text": "Trump responded a reporter’s question: whether he was concerned about the coronavirus. He said: \"No, not at all. And we have it totally under control. It's one person coming in from China ... It's going to be just fine.\" \n\n What's your response?",
+            "choice1": "Everything is under control! (10% more cases, 10% more economy)",
+            "target1": "casemoney",
+            "influence1": 0.1,
+            "choice2": "Be careful! (10% less case, 10% lese economy)",
+            "target2": "casemoney",
+            "influence2": -0.1,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
 
         }
+        ,
+        {
+            "time": "2020-01-29",
+            "title": "White House Coronavirus Task Force Established",
+            "text": "The U.S. formally announced a White House Coronavirus Task Force, including senior officials such as acting White House Chief of Staff Mick Mulvaney and others at HHS, CDC, and the U.S. State Department. \n\n However, the scope was limited initially to the logistics of keeping travelers out of the U.S. from China, and evacuating U.S. citizens. They did not initially focus on testing or supplies in the U.S.",
+            "choice1": "Focus on evacuating.",
+            "target1": "",
+            "influence1": 0,
+            "choice2": "Test and Propaganda also needed! (Propaganda upgrade 1 level, 5% lese economy)",
+            "target2": "pro",
+            "influence2": 0.05,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+        ,
+        {
+            "time": "2020-01-31",
+            "title": "Public Health Emergency",
+            "text": "The Trump Administration, through the U.S. Department of Health and Human Services, declared a public health emergency.",
+            "choice1": "Things are getting worse...",
+            "target1": "",
+            "influence1": 0,
+            "choice2": "",
+            "target2": "",
+            "influence2": 0,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        },
+        {
+            "time": "2020-02-03",
+            "title": "We need more diagnostic kit!",
+            "text": "49 members of Congress signed a letter to CDC Director Redfield highlighting the urgency of distributing a rapid diagnostic kit that could be processed locally, rather than centrally at the CDC in Atlanta, which they referred to as an \"unsustainable bottleneck\" as the number of suspected cases rise.",
+            "choice1": "I agree with them. (5% less case, 5% lese economy)",
+            "target1": "casemoney",
+            "influence1": -0.05,
+            "choice2": "Economy First! (5% more cases, 5% more economy)",
+            "target2": "casemoney",
+            "influence2": 0.05,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+        ,
+        {
+            "time": "2020-02-11",
+            "title": "Johnson & Johnson vaccine",
+            "text": "The Department of Health and Human Services (HHS) expanded a partnership with Janssen Research & Development, a part of Johnson & Johnson, to “expedite the development” of a coronavirus vaccine.",
+            "choice1": "Support them. (Vaccine upgrade 1 level, 5% lese economy)",
+            "target1": "vac",
+            "influence1": 0.05,
+            "choice2": "Sorry We can't afford it. (5% more economy)",
+            "target2": "",
+            "influence2": 0.05,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+        ,
+        {
+            "time": "2020-02-18",
+            "title": "Sanofi Pasteur vaccine",
+            "text": "HHS announced it would engage with Sanofi Pasteur in an effort to quickly develop a vaccine and treatments against the novel coronavirus.",
+            "choice1": "Support them. (Vaccine upgrade 1 level, 5% lese economy)",
+            "target1": "vac",
+            "influence1": 0.05,
+            "choice2": "Sorry We can't afford it. (5% more economy)",
+            "target2": "",
+            "influence2": 0.05,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+        ,
+        {
+            "time": "2020-02-29",
+            "title": "First Death",
+            "text": "The first death from coronavirus in the U.S. was reported at EvergreenHealth Medical Center in Kirkland, Washington, followed by two other confirmed cases in a nursing home in the same city.",
+            "choice1": "A sad story...",
+            "target1": "",
+            "influence1": 0,
+            "choice2": "",
+            "target2": "",
+            "influence2": 0,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+        ,
+        {
+            "time": "2020-03-06",
+            "title": "$8.3 billion Emergency funding",
+            "text": "The President signed an $8.3 billion bill providing $7.76 billion to federal, state, and local agencies for combating the coronavirus, and authorizing an additional $500 million in waivers for Medicare telehealth restrictions.",
+            "choice1": "This is very useful! (10% less case, 10% lese economy)",
+            "target1": "casemoney",
+            "influence1": -0.1,
+            "choice2": "Sorry We can't afford it... (10% more cases, 10% more economy)",
+            "target2": "casemoney",
+            "influence2": 0.1,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+        ,
+        {
+            "time": "2020-03-10",
+            "title": "Waiver of treatment",
+            "text": "The President and VP Pence met with top health insurance companies and secured a commitment to waive co-pays for coronavirus testing and treatment.",
+            "choice1": "We should waive these. (10% less case, 10% lese economy)",
+            "target1": "casemoney",
+            "influence1": -0.1,
+            "choice2": "Sorry We can't afford it... (10% more cases, 10% more economy)",
+            "target2": "casemoney",
+            "influence2": 0.1,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+        ,
+        {
+            "time": "2020-03-12",
+            "title": "More N95 respirators arrived",
+            "text": "HHS placed its first order of N95 respirators for healthcare workers of $4.8 million. However, the supplier contract required delivery to begin around the end of April.",
+            "choice1": "Send them quickly! (Propaganda upgrade 1 level, 5% lese economy)",
+            "target1": "casemoney",
+            "influence1": 0.05,
+            "choice2": "Follow the original plan",
+            "target2": "",
+            "influence2": 0,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+
+        ,
+        {
+            "time": "2020-03-16",
+            "title": "More Restrictions",
+            "text": "President Trump issued new guidelines urging people to avoid social gatherings of more than ten people and to restrict discretionary travel. He stopped short of ordering a quarantine or a curfew, but he said restrictions may last until July or August.",
+            "choice1": "This may be a long-term war. (5% lease economy)",
+            "target1": "money",
+            "influence1": -0.05,
+            "choice2": "",
+            "target2": "",
+            "influence2": 0,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+
+        ,
+        {
+            "time": "2020-03-27",
+            "title": "Coronavirus Aid, Relief, and Economic Security Act",
+            "text": "President Trump signs the Coronavirus Aid, Relief, and Economic Security Act into law on March 27.",
+            "choice1": "Hope it will be helpful.",
+            "target1": "",
+            "influence1": 0,
+            "choice2": "",
+            "target2": "",
+            "influence2": 0,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+
+        ,
+        {
+            "time": "2020-03-31",
+            "title": "The virus spreads rapidly",
+            "text": "As of March 31, Our World in Data reported there were 3,170 deaths, 164,620 confirmed cases, and 1.07 million tests completed in the U.S..",
+            "choice1": "It's just a begining...",
+            "target1": "",
+            "influence1": 0,
+            "choice2": "",
+            "target2": "",
+            "influence2": 0,
+            "choice3": "",
+            "target3": "",
+            "influence3": 0
+
+        }
+        
     ]
 
 }
