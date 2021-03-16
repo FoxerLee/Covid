@@ -16,6 +16,13 @@ public class GameController : MonoBehaviour
     public GameObject states;
     public GameObject stopButton;
 
+    private int countryCases = 0;
+    private int endCases = 1000;
+
+    private float currentMoney = 0f;
+    private float endMoney = 1000f;
+    private float dailyMoney = 2f;
+    
     void Awake()
     {
         if (instance == null)
@@ -30,10 +37,15 @@ public class GameController : MonoBehaviour
     }
 
     public void UpdateAllStates() {
+        // countryCases = 0;
         foreach (Transform child in states.transform) {
+
             child.gameObject.GetComponent<StatesCases>().CheckDaily(currentDate);
+            countryCases += child.gameObject.GetComponent<StatesCases>().dailyCases;
         }
 
+        // update case bar
+        UpdateCaseBar();
     }
 
     public void ToggleStopped() {
@@ -62,7 +74,16 @@ public class GameController : MonoBehaviour
                 currentDate = NextDay(currentDate);
                 UpdateAllStates();
                 timer = timeForOneDay;
+                
+                // event related
                 EventController.instance.CheckEvents();
+                
+                // economy related
+                currentMoney += dailyMoney;
+                UpdateMoneyBar();
+
+//                 EventController.instance.CheckEvents();
+
             }
             clock.GetComponent<Text>().text = currentDate;
         }
@@ -103,5 +124,23 @@ public class GameController : MonoBehaviour
             }
         }
         return y.ToString("D4") + "-" + m.ToString("D2") + "-" + d.ToString("D2");
+    }
+
+
+    private void UpdateCaseBar()
+    {
+        GameObject theBar = GameObject.Find("Cases/CaseBar");
+        RectTransform theBarRectTransform = theBar.GetComponent<RectTransform>();
+        float percentCase = (float)countryCases / (float)endCases * 288.0f;
+        theBarRectTransform.sizeDelta = new Vector2(percentCase, 31f);
+    }
+
+
+    private void UpdateMoneyBar()
+    {
+        GameObject theBar = GameObject.Find("Economy/MoneyBar");
+        RectTransform theBarRectTransform = theBar.GetComponent<RectTransform>();
+        float percentMoney = currentMoney / endMoney * 288.0f;
+        theBarRectTransform.sizeDelta = new Vector2(percentMoney, 31f);
     }
 }
