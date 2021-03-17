@@ -124,6 +124,10 @@ public class GameController : MonoBehaviour
                 {
                     GameOver("ending2");
                 }
+                if (currentDate == "2020-04-01")
+                {
+                    GameOver("ending3");
+                }
 
             }
             clock.GetComponent<Text>().text = currentDate;
@@ -252,6 +256,10 @@ public class GameController : MonoBehaviour
         }
 
         Debug.Log(casePer);
+        if (casePer < 0f)
+        {
+            casePer = 0f;
+        }
         dailyTotalCases *= casePer;
         dailyTotalDeaths *= casePer;
         countryCases += (int)dailyTotalCases;
