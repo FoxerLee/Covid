@@ -67,6 +67,8 @@ public class GameController : MonoBehaviour
 
         ResetAllState();
 
+        GetComponent<DataBoardController>().Reset();
+
         UpdateMoneyBar();
 
         policyController.GetComponent<PolicyController>().Reset();
