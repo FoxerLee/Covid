@@ -4511,6 +4511,10 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Dr. Black
       m_Image: {fileID: 0}
+    - m_Text: Dr. Bar
+      m_Image: {fileID: 0}
+    - m_Text: Dr. Foo
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -9328,6 +9332,10 @@ MonoBehaviour:
     - m_Text: Mr. Roy
       m_Image: {fileID: 0}
     - m_Text: Mr. Buzz
+      m_Image: {fileID: 0}
+    - m_Text: Mr. Luck
+      m_Image: {fileID: 0}
+    - m_Text: Mr. Scott
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19142,9 +19150,13 @@ MonoBehaviour:
   caImgArr:
   - {fileID: 21300000, guid: b72568ef973d6ea4a8b51d687c030585, type: 3}
   - {fileID: 21300000, guid: 323a7ebf3a82bfe4d87ee6045c4ec1b7, type: 3}
+  - {fileID: 21300000, guid: 666d07c3858ce4e428cfe703b575fef3, type: 3}
+  - {fileID: 21300000, guid: 60ff68da894d7014c8816aef835b6d2f, type: 3}
   hmImgArr:
   - {fileID: 21300000, guid: 35de90129b8f3fe4e9c6ce2947dd4e21, type: 3}
   - {fileID: 21300000, guid: 5b0780ca3e3d7bf408dd6be16db52a5b, type: 3}
+  - {fileID: 21300000, guid: 634638027577b9c42aff7e923d25ee6e, type: 3}
+  - {fileID: 21300000, guid: 7a8ac0f458480b243b44e2aacc5f9b5d, type: 3}
   healthMinister: {fileID: 843578815}
   covidAdvisor: {fileID: 20628105}
 --- !u!1 &2092695610
