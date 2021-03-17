@@ -24,11 +24,11 @@ public class EndingBehavior : MonoBehaviour
         float width = gameObject.transform.Find("Vaccine").GetComponent<RectTransform>().rect.width;
         RectTransform rt;
         rt = gameObject.transform.Find("Vaccine/VacBar").GetComponent<RectTransform>();
-        rt.sizeDelta = new Vector2 (width * 0.01f * vacP, rt.sizeDelta.y);
+        rt.sizeDelta = new Vector2 (width * vacP, rt.sizeDelta.y);
         rt = gameObject.transform.Find("Propaganda/ProBar").GetComponent<RectTransform>();
-        rt.sizeDelta = new Vector2 (width * 0.01f * proP, rt.sizeDelta.y);
+        rt.sizeDelta = new Vector2 (width * proP, rt.sizeDelta.y);
         rt = gameObject.transform.Find("Cooperation/CooBar").GetComponent<RectTransform>();
-        rt.sizeDelta = new Vector2 (width * 0.01f * cooP, rt.sizeDelta.y);
+        rt.sizeDelta = new Vector2 (width * cooP, rt.sizeDelta.y);
 
         ShowEndingPage();
     }

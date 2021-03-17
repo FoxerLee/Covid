@@ -18,13 +18,15 @@ public class GameController : MonoBehaviour
     public GameObject endingPage;
     public GameObject policyController;
 
+    public TextAsset jsonFile;
+
     public float currentMoney = 100f;
 
     public float casePer = 1f;
     public float moneyPer = 1f;
 
     private int countryCases = 0;
-    private int endCases = 150000;
+    private int endCases = 300000;
     
     private int countryDeaths = 0;
     
@@ -79,7 +81,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         EventController.instance.BindEventUI();
-        EventController.instance.allEvents = LoadJson.LoadJsonFromFile<Events>();
+        EventController.instance.allEvents = JsonUtility.FromJson<Events>(jsonFile.text);
+        // EventController.instance.allEvents = LoadJson.LoadJsonFromFile<Events>();
         GetComponent<DataLoader>().LoadDataBeforeRendering();
         // GameObject.Find("Event").SetActive(false);
         EventController.instance.eventBox.SetActive(false);
@@ -200,9 +203,9 @@ public class GameController : MonoBehaviour
         {
             endingPage.GetComponent<EndingBehavior>().TriggerEnding(
                 "There are too many patients, All hospitals are full, people are rushing to stock up drugs and goods... Everything is out of control...",
-                PolicyController.instance.vac / 10f * 500f,
-                PolicyController.instance.pro / 10f * 500f,
-                PolicyController.instance.coo / 10f * 500f,
+                PolicyController.instance.vac / 10f,
+                PolicyController.instance.pro / 10f,
+                PolicyController.instance.coo / 10f,
                 countryCases,
                 countryDeaths,
                 (int)currentMoney
@@ -212,9 +215,9 @@ public class GameController : MonoBehaviour
         {
             endingPage.GetComponent<EndingBehavior>().TriggerEnding(
                 "Although you have contained the epidemic, your treasury has dried up. The stock market crashed and prices soared. Is it all worth it?",
-                PolicyController.instance.vac / 10f * 500f,
-                PolicyController.instance.pro / 10f * 500f,
-                PolicyController.instance.coo / 10f * 500f,
+                PolicyController.instance.vac / 10f,
+                PolicyController.instance.pro / 10f,
+                PolicyController.instance.coo / 10f,
                 countryCases,
                 countryDeaths,
                 (int)currentMoney
@@ -224,9 +227,9 @@ public class GameController : MonoBehaviour
         {
             endingPage.GetComponent<EndingBehavior>().TriggerEnding(
                 "You successfully made it through April, but this is just the beginning. More incidents are waiting for you to solve, and more problems need to be dealt with by you. \n\n To be continued...",
-                PolicyController.instance.vac / 10f * 500f,
-                PolicyController.instance.pro / 10f * 500f,
-                PolicyController.instance.coo / 10f * 500f,
+                PolicyController.instance.vac / 10f,
+                PolicyController.instance.pro / 10f,
+                PolicyController.instance.coo / 10f,
                 countryCases,
                 countryDeaths,
                 (int)currentMoney
@@ -246,6 +249,7 @@ public class GameController : MonoBehaviour
             dailyTotalDeaths += child.gameObject.GetComponent<StatesCases>().dailyDeaths;
         }
 
+        Debug.Log(casePer);
         dailyTotalCases *= casePer;
         dailyTotalDeaths *= casePer;
         countryCases += (int)dailyTotalCases;

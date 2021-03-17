@@ -47,7 +47,7 @@ public class PolicyController : MonoBehaviour
             GameController.instance.currentMoney -= vacCost;
             vacCost += (1 + vacPer) * vacCost;
 
-            GameController.instance.casePer += -0.01f;
+            GameController.instance.casePer += -0.02f;
             GameController.instance.moneyPer += -0.01f;
         }
         else if (policy == "pro" && pro < 10f && proCost < GameController.instance.currentMoney)
@@ -56,7 +56,7 @@ public class PolicyController : MonoBehaviour
             GameController.instance.currentMoney -= proCost;
             proCost += (1 + proPer) * proCost;
 
-            GameController.instance.casePer += -0.01f;
+            GameController.instance.casePer += -0.02f;
             GameController.instance.moneyPer += -0.01f;
         }
         else if (policy == "coo" && coo < 10f && cooCost < GameController.instance.currentMoney)
@@ -65,7 +65,7 @@ public class PolicyController : MonoBehaviour
             GameController.instance.currentMoney -= cooCost;
             cooCost += (1 + cooPer) * cooCost;
 
-            GameController.instance.casePer += -0.01f;
+            GameController.instance.casePer += -0.02f;
             GameController.instance.moneyPer += -0.01f;
         }
 

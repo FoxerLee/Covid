@@ -19121,6 +19121,7 @@ MonoBehaviour:
   stopButton: {fileID: 1758155102}
   endingPage: {fileID: 840233319}
   policyController: {fileID: 947586138}
+  jsonFile: {fileID: 4900000, guid: d710a8a5e91d04cd3a5004e0ee10135a, type: 3}
   currentMoney: 2
   casePer: 1
   moneyPer: 1
