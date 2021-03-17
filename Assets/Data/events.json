@@ -164,7 +164,7 @@
             "title": "More N95 respirators arrived",
             "text": "HHS placed its first order of N95 respirators for healthcare workers of $4.8 million. However, the supplier contract required delivery to begin around the end of April.",
             "choice1": "Send them quickly! (Propaganda upgrade 1 level, 5% lese economy)",
-            "target1": "casemoney",
+            "target1": "pro",
             "influence1": 0.05,
             "choice2": "Follow the original plan",
             "target2": "",

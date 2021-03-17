@@ -134,29 +134,34 @@ public class EventController : MonoBehaviour
         {
             GameController.instance.moneyPer -= (float)influence;
             PolicyController.instance.pro += 1f;
+            GameController.instance.casePer += -0.02f;
         }
         else if (target == "vac")
         {
             GameController.instance.moneyPer -= (float)influence;
             PolicyController.instance.vac += 1f;
+            GameController.instance.casePer += -0.02f;
         }
 
-        if (a == "action1")
-        {
-            choice.GetComponent<Button>().onClick.RemoveListener(action1);
-        }
-        else if (a == "action2")
-        {
-            choice.GetComponent<Button>().onClick.RemoveListener(action2);
-        }
-        else if (a == "action3")
-        {
-            choice.GetComponent<Button>().onClick.RemoveListener(action3);
-        }
-        else 
-        {
-            Debug.LogError("No such action!");
-        }
+        // if (a == "action1")
+        // {
+        //     choice.GetComponent<Button>().onClick.RemoveListener(action1);
+        // }
+        // else if (a == "action2")
+        // {
+        //     choice.GetComponent<Button>().onClick.RemoveListener(action2);
+        // }
+        // else if (a == "action3")
+        // {
+        //     choice.GetComponent<Button>().onClick.RemoveListener(action3);
+        // }
+        // else 
+        // {
+        //     Debug.LogError("No such action!");
+        // }
+        choice1.GetComponent<Button>().onClick.RemoveAllListeners();
+        choice2.GetComponent<Button>().onClick.RemoveAllListeners();
+        choice3.GetComponent<Button>().onClick.RemoveAllListeners();
         
         eventBox.SetActive(false);
         GameController.instance.stopped = false;
